@@ -1,12 +1,9 @@
-export default function fetchCountries (name){
-    return fetch(`https://restcountries.eu/rest/v2/name/${name}`)
-    .then(response => {
-        if(name){
-             return response.json();
-        } else {
-            return;
-        }
-    })
-    .catch(error => console.log(error));
-}
+
+const baseUrl = 'https://restcountries.eu/rest/v2/name/';
+
+export default function fetchCountries(name) {
+    return fetch(baseUrl + name)
+        .then(response => response.json())
+        .catch(error => console.log(error))
+};
 
